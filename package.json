@@ -5,7 +5,8 @@
   "private": true,
   "dependencies": {
     "egg": "^2.2.1",
-    "egg-scripts": "^2.5.0"
+    "egg-scripts": "^2.5.0",
+    "egg-validate": "^2.0.1"
   },
   "devDependencies": {
     "autod": "^3.0.1",
@@ -21,12 +22,14 @@
     "node": ">=8.9.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-owe-egg",
-    "stop": "egg-scripts stop --title=egg-server-owe-egg",
+    "start": "egg-scripts start --daemon --title=owe-egg",
+    "stop": "egg-scripts stop --title=owe-egg",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
+    "start:test": "egg-scripts stop --title=owe-egg && egg-scripts start --title=owe-egg --daemon --env=test",
+    "start:prod": "egg-scripts stop --title=owe-egg && egg-scripts start --title=owe-egg --daemon --env=prod",
     "cov": "egg-bin cov",
     "lint": "eslint .",
     "ci": "npm run lint && npm run cov",

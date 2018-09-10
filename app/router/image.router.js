@@ -1,7 +1,6 @@
 'use strict';
 module.exports = app => {
 	const { router, controller, middleware } = app;
-	  const { checkSession } = middleware;
 	/**
 	 * @apiVersion 0.0.1
 	 * @apiGroup Config
@@ -12,6 +11,6 @@ module.exports = app => {
 	 * @apiSuccessExample {json} 请求成功:
 	 * {"data":{},"error":{"returnCode":0,"returnMessage":"创建成功","returnUserMessage":"创建成功"}}
 	 */
-	router.get('/image/list', checkSession(), controller.image.list);
-	router.post('/image/detail', checkSession(), controller.image.detail);
+	router.get('/image/list', controller.image.list);
+	router.post('/image/detail', controller.image.detail);
 };

@@ -1,8 +1,9 @@
 'use strict';
-const Controller = require('egg').Controller;
+const Controller = require('egg').Controller; 
 
 class ImageController extends Controller {
 	async list() {
+    this.ctx.returnMsg('500', '添加数据出错', {});
 		// this.ctx.validate({
 		// 	size: 'string',
 		// 	specification: 'string',
@@ -29,7 +30,8 @@ class ImageController extends Controller {
 		// }
 
 	};
-	async detai() {
+	async detail() {
+    this.ctx.returnMsg('500', '添加数据出错', {});
 		// this.ctx.validate({
 		// 	id: 'number'
 		// });
